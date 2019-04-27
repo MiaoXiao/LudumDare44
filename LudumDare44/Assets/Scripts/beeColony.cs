@@ -11,6 +11,7 @@ public class beeColony : MonoBehaviour {
     //Private field
     private int upgradeCost = 5;
 
+    private Trait[] beeTraits = new Trait[3];
     private float _speed = 1.0f; //****1.0/1 distance / time
     private float _energy = 1.5f; //****1.5/1 honeyGathered / honeyTotal
     private float _honeyCapacity = 10f;
@@ -74,5 +75,10 @@ public class beeColony : MonoBehaviour {
         honeyCost += upgradeCost * numUpgrades;
         Debug.Log(honeyCost);
         //TODO: add subtration functionality here, update grabbed singleton grabbed [honeyAmt - honeyCost]
+    }
+
+    public void addTrait(Trait newT){
+        beeTraits[numUpgrades] = newT;
+        numUpgrades++;
     }
 }
