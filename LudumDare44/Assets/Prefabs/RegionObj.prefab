@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4443172236764541662}
   - component: {fileID: 1993888876326737831}
   - component: {fileID: 941072093}
+  - component: {fileID: 1083116058897171647}
   m_Layer: 0
   m_Name: RegionObj
   m_TagString: Untagged
@@ -44,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f5af26d2ac1b2544b609bf9692903cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHoney: 0
+  _currentHoney: 0
+  _distanceToHive: 0
 --- !u!212 &941072093
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -92,3 +96,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1083116058897171647
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8031773630951632562}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.25

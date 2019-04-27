@@ -27,16 +27,22 @@ public class Encounter : MonoBehaviour
     private Region TESTREGION;
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.W)) {
+        if (Input.GetKeyDown(KeyCode.I)) {
             PopulateInfo(TESTCOLONY, TESTREGION);
+        }
+        if (Input.GetKeyDown(KeyCode.W)) {
             StartEncounter();
         }
     }
     public void PopulateInfo(beeColony c, Region r) {
-        _currentColony = c;
-        _currentRegion = r;
-        
-        //Update UI stuff here
+        if(c != null) _currentColony = c;
+        if(r != null) _currentRegion = r;
+
+        Debug.Log(_currentColony + " | " + _currentRegion);
+
+        if (_currentColony && _currentRegion) {
+            //Update UI stuff here
+        }
     }
 
     public void StartEncounter() {

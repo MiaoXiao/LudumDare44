@@ -8,6 +8,10 @@ using Random = UnityEngine.Random;
 
 public class HiveManager : Singleton<HiveManager>
 {
+    [Header("References")]
+    [SerializeField]
+    private Encounter _encountersHandler;
+
     [Header("Time")]
 
     [Tooltip("The time left in the game. When it reaches 0, player wins")]
@@ -204,6 +208,7 @@ public class HiveManager : Singleton<HiveManager>
         StartCoroutine(HoneyLoss());
         StartCoroutine(DNAGain());
         StartCoroutine(GenerateRegion());
+
     }
 
     public void QuitGame()
@@ -276,7 +281,16 @@ public class HiveManager : Singleton<HiveManager>
             Vector2 spawnPos = (_avaliableRegions[randomIndex] * _cellSize + bottomLeftCorner);
             Region regionInstance = Instantiate(_regionTemplate);
             regionInstance.SetRegionData(spawnPos, temperature, predator);
+            regionInstance.OnRegionSelected += UpdateEncounter;
             _allRegions.Add(regionInstance);
         }
+    }
+
+    public void UpdateEncounter(Region r) {
+        _encountersHandler.PopulateInfo(null, r);
+    }
+
+    public void UpdateEncounter(beeColony c) {
+        _encountersHandler.PopulateInfo(c, null);
     }
 }
