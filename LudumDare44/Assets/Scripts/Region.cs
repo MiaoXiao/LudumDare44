@@ -16,11 +16,11 @@ public class Region : MonoBehaviour
     private int _predatorLevel = 0;
 
     #region properties
-    public int MaxHoney {
+    public int MaxHoneyCapacity {
         get { return _maxHoney; }
     }
 
-    public int RemainingHoney {
+    public int RemainingHoneyCapacity {
         get { return _currentHoney; }
     }
 
