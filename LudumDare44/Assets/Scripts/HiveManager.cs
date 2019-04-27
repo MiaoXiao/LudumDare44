@@ -14,7 +14,9 @@ public class HiveManager : Singleton<HiveManager>
     [SerializeField]
     private beeColony[] _colonies;
     private beeColony _activeColony;
-
+    public beeColony ActiveColony {
+        get { return _activeColony; }
+    }
     [Header("Time")]
 
     [Tooltip("The time left in the game. When it reaches 0, player wins")]
