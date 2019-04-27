@@ -33,7 +33,7 @@ public class Formulas : Singleton<Formulas>
     public void killBees(Region rNum, beeColony colonyNum){
         int tempBees = 0;
         for (int i = 0; i < colonyNum.numBees - 1; ++i){
-            if(Random.Range(0,7) < rNum.PredatorLevel){
+            if(Random.Range(0,7) < rNum.PredatorLevel){ //TODO: change 7 to a value that can be modified, will take in a value from beeColony
                 tempBees++;
             }
         }
