@@ -45,6 +45,11 @@ public class Formulas : Singleton<Formulas>
         return (20 - tValue) / 20;
     }
 
+    public float showPotential(Region rNum, beeColony colonyNum){
+        return tInfluence(rNum, colonyNum) * 100;
+        //returns % value of potential honey gain, can multiply later to view how much gain there actually is
+    }
+
     //TODO: Honey formulas
     public int totalHoneyGathered(Region rNum, beeColony colonyNum){
         int honeyAmount = 500; //TODO: grab value from hive
