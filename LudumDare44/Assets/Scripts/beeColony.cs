@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class beeColony : MonoBehaviour
-{
+public class beeColony : MonoBehaviour {
     //Public Field
     [SerializeField]
     public int numUpgrades = 0;
@@ -18,7 +17,13 @@ public class beeColony : MonoBehaviour
 
     private int _tempRes = 0; //spectrum from 10 to -10, where 10 is a cold bee group and -10 is a hot bee group
 
+    private bool _isBusy = false;
+
     #region properties
+    public bool IsBusy {
+        get { return _isBusy; }
+        set { _isBusy = value; }
+    }
     public float Speed {
         get { return _speed; }
     }

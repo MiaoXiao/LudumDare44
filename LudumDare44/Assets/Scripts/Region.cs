@@ -8,9 +8,11 @@ using UnityEngine;
 /// </summary>
 public class Region : MonoBehaviour
 {
+    [SerializeField]
     private int _maxHoney = 0;
+    [SerializeField]
     private int _currentHoney = 0;
-    
+    [SerializeField]
     private float _distanceToHive = 0f;
     private int _temperature = 0;
     private int _predatorLevel = 0;

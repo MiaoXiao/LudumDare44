@@ -6,7 +6,7 @@ public class Formulas : Singleton<Formulas>
 {
     //Time helper formula
     private float timeTaken(Region rNum, beeColony colonyNum){
-        return rNum.HiveDistance / colonyNum.getSpeed();
+        return rNum.HiveDistance / colonyNum.Speed;
     }
 
     //TODO: Energy Formulas
@@ -41,7 +41,7 @@ public class Formulas : Singleton<Formulas>
     }
 
     public float tInfluence(Region rNum, beeColony colonyNum){
-        float tValue = Mathf.Abs(rNum.Temperature + colonyNum.tempRes);
+        float tValue = Mathf.Abs(rNum.Temperature + colonyNum.TemperatureResistance);
         return (20 - tValue) / 20;
     }
 
