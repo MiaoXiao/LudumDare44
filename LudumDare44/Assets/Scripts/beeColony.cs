@@ -18,6 +18,23 @@ public class beeColony : MonoBehaviour
 
     private int _tempRes = 0; //spectrum from 10 to -10, where 10 is a cold bee group and -10 is a hot bee group
 
+    #region properties
+    public float Speed {
+        get { return _speed; }
+    }
+
+    public float Energy {
+        get { return _energy; }
+    }
+
+    public float HoneyCapacity {
+        get { return _honeyCapacity; }
+    }
+
+    public float TemperatureResistance {
+        get { return _tempRes; }
+    }
+    #endregion
     void Awake(){
         
     }
