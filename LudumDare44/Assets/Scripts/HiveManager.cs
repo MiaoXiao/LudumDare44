@@ -106,7 +106,10 @@ public class HiveManager : Singleton<HiveManager>
     [SerializeField]
     private Vector2 _gridDimensions = new Vector2(30, 30);
 
-    private Vector2 _gridSize
+    /// <summary>
+    /// Unity units of each grid cell
+    /// </summary>
+    private Vector2 _cellSize
     {
         get
         {
@@ -114,7 +117,18 @@ public class HiveManager : Singleton<HiveManager>
         }
     }
 
+    /// <summary>
+    /// Contains many indexs which refer to each grid cell
+    /// </summary>
     private List<Vector2> _avaliableRegions = new List<Vector2>();
+
+    [Header("Text messages")]
+
+    [SerializeField]
+    private string _winMessage = "You Win!";
+
+    [SerializeField]
+    private string _loseMessage = "You Lose";
 
     [Header("UI Elements")]
 
@@ -131,10 +145,7 @@ public class HiveManager : Singleton<HiveManager>
     private Text _dnaCount;
 
     [SerializeField]
-    private GameObject _winUi;
-
-    [SerializeField]
-    private GameObject _loseUi;
+    private GameObject _endGameUi;
 
     [SerializeField]
     private Region _regionTemplate;
@@ -217,13 +228,15 @@ public class HiveManager : Singleton<HiveManager>
     private void Lose()
     {
         StopAllCoroutines();
-        _loseUi.SetActive(true);
+        _endGameUi.SetActive(true);
+        _endGameUi.GetComponentInChildren<Text>().text = _winMessage;
     }
 
     private void Win()
     {
         StopAllCoroutines();
-        _winUi.SetActive(true);
+        _endGameUi.SetActive(true);
+        _endGameUi.GetComponentInChildren<Text>().text = _loseMessage;
     }
 
     private IEnumerator GenerateRegion()
@@ -238,9 +251,9 @@ public class HiveManager : Singleton<HiveManager>
             Vector2 gridOrigin = _gridBoundary.transform.position;
             float width = _gridBoundary.bounds.size.x;
             float height = _gridBoundary.bounds.size.y;
-            Vector2 bottomLeftCorner = new Vector3(gridOrigin.x - width / 2f + _gridSize.x / 2f,
-                gridOrigin.y - height / 2f + _gridSize.y / 2f);
-            Vector2 spawnPos = (_avaliableRegions[randomIndex] * _gridSize + bottomLeftCorner);
+            Vector2 bottomLeftCorner = new Vector3(gridOrigin.x - width / 2f + _cellSize.x / 2f,
+                gridOrigin.y - height / 2f + _cellSize.y / 2f);
+            Vector2 spawnPos = (_avaliableRegions[randomIndex] * _cellSize + bottomLeftCorner);
             Region regionInstance = Instantiate(_regionTemplate);
             regionInstance.SetRegionData(spawnPos, temperature, predator);
             _allRegions.Add(regionInstance);
