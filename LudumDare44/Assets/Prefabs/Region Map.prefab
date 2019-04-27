@@ -81,9 +81,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb39d2870e3fcb44dafdb1d7f79a7a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
-  size: 0.25
+  speed: 0.1
+  size: 0.03
   pulseOnStart: 0
 --- !u!1 &4548873783956357484
 GameObject:
@@ -631,6 +631,7 @@ MonoBehaviour:
   _secondsToSurvive: 300
   _currentHoney: 500
   _maxHoney: 1000
+  _dangerHoneyThreshold: 0.5
   _honeyLossIntervalDuration: 1
   _currentDNA: 100
   _dnaGenerationPerSecond: 1
@@ -643,7 +644,7 @@ MonoBehaviour:
   _gridBoundary: {fileID: 4548873784560776521}
   _honeyCount: {fileID: 4548873783891881523}
   _dnaCount: {fileID: 4548873785495101842}
-  _endGameUi: {fileID: 0}
+  _endGameUi: {fileID: 4548873785346119690}
   _regionTemplate: {fileID: 1993888876326737831, guid: 49d256816d4fbaa4dbcf3d996e21f3fb,
     type: 3}
 --- !u!1 &4548873785294825617
@@ -836,7 +837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 149.7, y: -106.4}
+  m_AnchoredPosition: {x: 149.70001, y: -106.3999}
   m_SizeDelta: {x: 299.5, y: 212.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4548873785495101840
@@ -1216,10 +1217,10 @@ RectTransform:
   m_Father: {fileID: 4548873785579586303}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -175.04999, y: -51.649963}
-  m_SizeDelta: {x: 350.09998, y: 103.29999}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 189.69995, y: 90.099976}
+  m_SizeDelta: {x: 379.19995, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4548873785838271628
 CanvasRenderer:
@@ -1255,7 +1256,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 66
+    m_MaxSize: 102
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
