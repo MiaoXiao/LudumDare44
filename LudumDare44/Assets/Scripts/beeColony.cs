@@ -19,6 +19,7 @@ public class beeColony : MonoBehaviour {
     private int _tempRes = 0; //spectrum from 10 to -10, where 10 is a cold bee group and -10 is a hot bee group
 
     private bool _isBusy = false;
+    private bool _traitFull = false;
 
     #region properties
     public bool IsBusy {
@@ -39,6 +40,10 @@ public class beeColony : MonoBehaviour {
 
     public float TemperatureResistance {
         get { return _tempRes; }
+    }
+
+    public bool TraitFull{
+        get { return _traitFull; }
     }
     #endregion
     void Awake(){
@@ -80,5 +85,11 @@ public class beeColony : MonoBehaviour {
     public void addTrait(Trait newT){
         beeTraits[numUpgrades] = newT;
         numUpgrades++;
+        if (numUpgrades >= 3) {
+            _traitFull = true;
+        }
+        else{
+            _traitFull = false;
+        }
     }
 }
