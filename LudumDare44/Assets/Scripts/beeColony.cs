@@ -5,22 +5,25 @@ using UnityEngine;
 public class beeColony : MonoBehaviour
 {
     //Public Field
+    [SerializeField]
     public int numUpgrades = 0;
+    public int numBees = 5;
 
     //Private field
-    private int numBees = 5;
     private int upgradeCost = 5;
 
-    private float speed = 1.0f; //****1.0/1 distance / time
-    private float energy = 1.5f; //****1.5/1 honeyGathered / honeyTotal
+    private float _speed = 1.0f; //****1.0/1 distance / time
+    private float _energy = 1.5f; //****1.5/1 honeyGathered / honeyTotal
+    private float _honeyCapacity = 10f;
 
-    private int tempRes = 0; //spectrum from 10 to -10, where 10 is a cold bee group and -10 is a hot bee group
+    private int _tempRes = 0; //spectrum from 10 to -10, where 10 is a cold bee group and -10 is a hot bee group
 
     void Awake(){
         
     }
     
     void Update(){
+        /*
         if (Input.GetKey("w")){
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + (speed * Time.deltaTime), 0);
         }
@@ -39,6 +42,7 @@ public class beeColony : MonoBehaviour
         {
             addBees(10);
         }
+        */
     }
 
     public void addBees(int honeyAmount){
