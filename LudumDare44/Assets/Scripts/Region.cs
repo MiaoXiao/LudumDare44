@@ -46,11 +46,11 @@ public class Region : MonoBehaviour
     /// <param name="hivePosition">hive's position</param>
     /// <param name="temperature"></param>
     /// <param name="predatorLevel"></param>
-    public void SetRegionData(Vector3 hivePosition, int temperature, int predatorLevel) {
+    public void SetRegionData(Vector3 regionPosition, int temperature, int predatorLevel) {
         this._temperature = Mathf.Clamp(temperature, -10, 10);
         this._predatorLevel = Mathf.Clamp(predatorLevel, 0, 1);
-
-        _distanceToHive = (transform.position - hivePosition).magnitude;
+        transform.position = regionPosition;
+        _distanceToHive = (transform.position - HiveManager.Instance.transform.position).magnitude;
         ///TODO:
         ///maxHoney = currentHoney = Some formula to dictate this value;
     }
