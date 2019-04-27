@@ -77,8 +77,10 @@ public class BeeGroup : MonoBehaviour {
     IEnumerator MoveGameObjectTo(Vector3 targetLocation, float travelSpeed, float timeToReach) {
         //move to the hive within
         while (timeToReach > 0) {
+            Debug.Log("moving!");
             transform.position = Vector3.MoveTowards(transform.position, targetLocation, Time.deltaTime * travelSpeed);
             timeToReach -= Time.deltaTime;
+            yield return 0f;
         }
         yield return 0f;
     }

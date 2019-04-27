@@ -584,6 +584,11 @@ PrefabInstance:
       propertyPath: _currentHoney
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1993888876326737831, guid: 49d256816d4fbaa4dbcf3d996e21f3fb,
+        type: 3}
+      propertyPath: _distanceToHive
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49d256816d4fbaa4dbcf3d996e21f3fb, type: 3}
 --- !u!1 &745404093
