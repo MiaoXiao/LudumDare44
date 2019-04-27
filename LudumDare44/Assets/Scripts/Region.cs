@@ -64,7 +64,6 @@ public class Region : MonoBehaviour
         if (OnRegionSelected != null) OnRegionSelected(this);
     }
 
-
     /// <summary>
     /// return the amount drained after attempting to remove drainValue from reserves
     /// </summary>

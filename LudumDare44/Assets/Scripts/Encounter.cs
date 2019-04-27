@@ -46,6 +46,8 @@ public class Encounter : MonoBehaviour
     }
 
     public void StartEncounter() {
+        if (!_currentRegion && !_currentColony) return;
+
         BeeGroup group = Instantiate(_beeObjTemplate, transform.position, Quaternion.identity);
         group.InitializeGroup(_currentColony, _currentRegion, _energyDrainRate, _energyDrainMovement, ENCOUNTER_TICK_RATE);
         group.StartGroup(); 

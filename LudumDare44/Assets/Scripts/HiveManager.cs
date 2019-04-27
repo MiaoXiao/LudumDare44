@@ -11,6 +11,9 @@ public class HiveManager : Singleton<HiveManager>
     [Header("References")]
     [SerializeField]
     private Encounter _encountersHandler;
+    [SerializeField]
+    private beeColony[] _colonies;
+    private beeColony _activeColony;
 
     [Header("Time")]
 
@@ -203,6 +206,8 @@ public class HiveManager : Singleton<HiveManager>
         SecondsToSurvive = SecondsToSurvive;
         CurrentDNA = CurrentDNA;
         CurrentHoney = CurrentHoney;
+        //initial colony is the first one
+        _activeColony = _colonies[0];
 
         StartCoroutine(TimeLoss());
         StartCoroutine(HoneyLoss());
@@ -287,10 +292,17 @@ public class HiveManager : Singleton<HiveManager>
     }
 
     public void UpdateEncounter(Region r) {
-        _encountersHandler.PopulateInfo(null, r);
+        _encountersHandler.PopulateInfo(_activeColony, r);
     }
 
     public void UpdateEncounter(beeColony c) {
         _encountersHandler.PopulateInfo(c, null);
+    }
+
+    public void SelectNewColony(int index) {
+        _activeColony = _colonies[index];
+        //UI stuff to swap colony UI
+        UpdateEncounter(_activeColony);
+
     }
 }
