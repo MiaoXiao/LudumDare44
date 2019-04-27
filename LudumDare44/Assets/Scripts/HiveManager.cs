@@ -39,12 +39,32 @@ public class HiveManager : Singleton<HiveManager>
             if (value < 0) _currentHoney = 0;
             else _currentHoney = value;
             _honeyCount.value = _currentHoney;
+            float currentPerc = CurrentHoney / MaxHoney;
+            if (currentPerc <= _dangerHoneyThreshold && !_honeyIsLow)
+            {
+                _honeyCount.GetComponent<PulseObject>().Pulse();
+                _honeyIsLow = true;
+            }
+            else if (currentPerc > _dangerHoneyThreshold && _honeyIsLow)
+            {
+                _honeyCount.GetComponent<PulseObject>().StopPulse();
+                _honeyIsLow = false;
+            }
         }
     }
+
+    private bool _honeyIsLow = false;
 
     [SerializeField]
     private int _maxHoney = 1000;
     public int MaxHoney { get { return _maxHoney; } }
+
+    /// <summary>
+    /// At what percentage of honey do we warn players they may lose soon
+    /// </summary>
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float _dangerHoneyThreshold = 0.33f;
 
     //@@@ Should be equal to (number of bees in each colony * honey intake) * 3
     private int _honeyLossPerInterval = 10;
