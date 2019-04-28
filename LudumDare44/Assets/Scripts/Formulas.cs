@@ -13,7 +13,7 @@ public class Formulas : Singleton<Formulas>
     private float energyCost(Region rNum, beeColony colonyNum){
         float timeDif = 0f;
         timeDif = timeTaken(rNum, colonyNum);
-        return  5 * timeDif * 2; //TODO: take the offset value of drain honey and change this to the offset variable
+        return  HiveManager.Instance.HoneyLossPerInterval * timeDif * 2;
     }
 
     /// <summary>

@@ -87,7 +87,13 @@ public class ShopUi : MonoBehaviour
 
     public void PurchaseSelectedTrait()
     {
-        HiveManager.Instance.ActiveColony.addTrait(_currentlySelectedTrait);
+        if(HiveManager.Instance.CurrentDNA >= _dnaCost){
+            HiveManager.Instance.ActiveColony.addTrait(_currentlySelectedTrait);
+            HiveManager.Instance.CurrentDNA -= _dnaCost;
+        }
+        else{
+            return;
+        }
     }
 
     public void ToggleShopTab()
