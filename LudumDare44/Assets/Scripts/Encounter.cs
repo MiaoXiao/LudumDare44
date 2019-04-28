@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 /// <summary>
 /// Handles interaction between Colony and Region
@@ -20,18 +20,12 @@ public class Encounter : MonoBehaviour
     private BeeGroup _beeObjTemplate;
 
     [SerializeField]
-    private beeColony TESTCOLONY;
-    [SerializeField]
-    private Region TESTREGION;
+    private Button _embarkButton;
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.I)) {
-            PopulateInfo(TESTCOLONY, TESTREGION);
-        }
-        if (Input.GetKeyDown(KeyCode.W)) {
-            StartEncounter();
-        }
+    public void Update() {
+        _embarkButton.interactable = !_currentColony.IsBusy;
     }
+
     public void PopulateInfo(beeColony c, Region r) {
         if(c != null) _currentColony = c;
         if(r != null) _currentRegion = r;

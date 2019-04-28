@@ -40,6 +40,7 @@ public class RegionDataUI : MonoBehaviour {
     /// <param name="r"></param>
     /// <param name="c"></param>
     public void UpdateRegionUI(beeColony c, Region r = null) {
+        if(!r && !_currentRegion) { return; }
         if (r) {
             _currentRegion = r;
         }
