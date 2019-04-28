@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Brittle bees have hone their craft in flight and honey gathering, but
     in doing so they left their bodies vulnerable to the predators around.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c0e2243979727be4a93276d07dc1a7e5, type: 3}
   temperatureRes: 0
   predatorPrevention: -2
   beeSpeedMod: 1
