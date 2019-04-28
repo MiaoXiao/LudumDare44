@@ -71,7 +71,8 @@ public class ShopUi : MonoBehaviour
             newTraitButton.onClick.AddListener(delegate { SetViewedTrait(_allTraits[i]); });
         }
 
-        SetViewedTrait(_allTraits[0]);
+        if (_allTraits != null &&_allTraits.Length > 0)
+            SetViewedTrait(_allTraits[0]);
     }
 
     private void SetViewedTrait(Trait t)

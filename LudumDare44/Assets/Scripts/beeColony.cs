@@ -6,15 +6,20 @@ public class beeColony : MonoBehaviour {
     //Public Field
     [SerializeField]
     public int numUpgrades = 0;
+
+    [SerializeField]
     public int numBees = 5;
 
     //Private field
     private int upgradeCost = 5;
+    private int honeyCost = 200;
+    private float _upgradeEnergy = 0f;
 
     private Trait[] beeTraits = new Trait[3];
     private float _speed = 1.0f; //****1.0/1 distance / time
-    private float _energy = 1.5f; //****1.5/1 honeyGathered / honeyTotal
+    private float _energy = 0f;
     private float _honeyCapacity = 10f;
+    private int _antiPredator = 0;
 
     private int _tempRes = 0; //spectrum from 10 to -10, where 10 is a cold bee group and -10 is a hot bee group
 
@@ -34,6 +39,10 @@ public class beeColony : MonoBehaviour {
         get { return _energy; }
     }
 
+    public float EnergyUpgrade{
+        get { return _upgradeEnergy; }
+    }
+
     public float HoneyCapacity {
         get { return _honeyCapacity; }
     }
@@ -45,12 +54,17 @@ public class beeColony : MonoBehaviour {
     public bool TraitFull{
         get { return _traitFull; }
     }
+
+    public int AntiPredator{
+        get { return _antiPredator; }
+    }
     #endregion
     void Awake(){
         
     }
     
     void Update(){
+        _energy = ( HiveManager.Instance.CurrentHoney / 4 ) + upgradeEnergy;
         /*
         if (Input.GetKey("w")){
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + (speed * Time.deltaTime), 0);
@@ -76,7 +90,6 @@ public class beeColony : MonoBehaviour {
     public void addBees(int honeyAmount){
         numBees += 1;
         Debug.Log(numBees);
-        int honeyCost = 10;
         honeyCost += upgradeCost * numUpgrades;
         Debug.Log(honeyCost);
         //TODO: add subtration functionality here, update grabbed singleton grabbed [honeyAmt - honeyCost]
@@ -84,6 +97,16 @@ public class beeColony : MonoBehaviour {
 
     public void addTrait(Trait newT){
         beeTraits[numUpgrades] = newT;
+
+        //updating values
+        _tempRes += newT.temperatureRes;
+        _antiPredator += newT.predatorPrevention;
+        HiveManager.Instance.DNAGenerationPerSecond += newT.passiveDNA;
+        upgradeEnergy += newT.maxEnergy;
+        HiveManager.Instance.HoneyLossPerInterval += newT.honeyConsumption;
+        _speed += newT.beeSpeedMod;
+        honeyCost -= newT.beeRefund;
+
         numUpgrades++;
         if (numUpgrades >= 3) {
             _traitFull = true;
