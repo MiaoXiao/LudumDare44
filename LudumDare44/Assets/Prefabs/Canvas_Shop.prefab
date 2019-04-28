@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 45, y: -46}
+  m_AnchoredPosition: {x: 64, y: -49.8}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1055583082
@@ -261,7 +261,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d607be3b06f062a4fad3bdfc18764cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _allTraits: []
+  _allTraits:
+  - {fileID: 11400000, guid: 7c86eb38c8366354c8654a784c98ff0f, type: 2}
+  - {fileID: 11400000, guid: a9be257863e6cdf4a958a8d3e1d1ffc1, type: 2}
+  - {fileID: 11400000, guid: be8aa4502cfb9b545b546ad039d11675, type: 2}
+  - {fileID: 11400000, guid: e0ee748231cccee4e898365426c95037, type: 2}
+  - {fileID: 11400000, guid: cbab643b3c207e2468c2ed4c27cc0405, type: 2}
+  - {fileID: 11400000, guid: 423096db225a7cb438f6565073644390, type: 2}
   _dnaCost: 250
   _buttonGridLayout: {fileID: 1499926160073354436}
   _traitButton: {fileID: 8757655940959594235, guid: efd873a44237a364e8afdab375897791,
@@ -274,8 +280,8 @@ MonoBehaviour:
   _toggleOffPos: {fileID: 2197502169945458648}
   _timeToToggle: 0.5
   _toggleImage: {fileID: 2197502170545962072}
-  _activeTab: {fileID: 21300000, guid: 23d8677e73c78684fbcaaad7d7ac46ed, type: 3}
-  _hiddenTab: {fileID: 21300000, guid: dca68175aea17f64f8d8b3e9ce749288, type: 3}
+  _activeTab: {fileID: 21300000, guid: 2c63ff61872c3ed4492226a4fe69409d, type: 3}
+  _hiddenTab: {fileID: 21300000, guid: 818b2fe8bd1dbac418e007c447f04d1c, type: 3}
 --- !u!1 &2197502170190333010
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 286.91, y: -5.2}
+  m_AnchoredPosition: {x: 291, y: -5.2}
   m_SizeDelta: {x: -0.0050049, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2197502170355694236
@@ -672,7 +678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 38.305008, y: -37.5}
+  m_AnchoredPosition: {x: 50, y: -17}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2197502170545962073
@@ -703,8 +709,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2c63ff61872c3ed4492226a4fe69409d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -733,8 +739,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
+    m_PressedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
