@@ -433,8 +433,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 143.86, y: -77.99}
-  m_SizeDelta: {x: 287.71, y: 331.07}
+  m_AnchoredPosition: {x: 143.86, y: -101.33}
+  m_SizeDelta: {x: 287.7, y: 284.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2197502170355694232
 CanvasRenderer:
@@ -524,8 +524,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.3999939, y: 165.54}
-  m_SizeDelta: {x: 0.8, y: -331.07}
+  m_AnchoredPosition: {x: 0.3999939, y: 142.2}
+  m_SizeDelta: {x: 0.8, y: -284.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2197502170407504404
 CanvasRenderer:
@@ -598,8 +598,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.05000305, y: -15.9}
-  m_SizeDelta: {x: -0.7, y: 31.5}
+  m_AnchoredPosition: {x: 0.05000305, y: -20.675}
+  m_SizeDelta: {x: -0.7, y: 41.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2197502170479590664
 CanvasRenderer:
@@ -631,7 +631,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: dfc64174b87e8a24294893bbb53360b4, type: 3}
-    m_FontSize: 16
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -934,8 +934,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.3000183, y: 6.795}
-  m_SizeDelta: {x: 0, y: -76.89}
+  m_AnchoredPosition: {x: -0.3000183, y: 2}
+  m_SizeDelta: {x: 0, y: -86.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2197502171296905679
 CanvasRenderer:
@@ -967,7 +967,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: dfc64174b87e8a24294893bbb53360b4, type: 3}
-    m_FontSize: 12
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
