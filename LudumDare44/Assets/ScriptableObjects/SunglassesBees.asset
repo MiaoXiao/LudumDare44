@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SunglassesBees
   m_EditorClassIdentifier: 
   description: Sunglasses shades the bees' sensitive eyes against the raging sun.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: d91ed9cdbe02da649bf9e58e503b200a, type: 3}
   temperatureRes: -3
   predatorPrevention: 0
   beeSpeedMod: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BuffBees
   m_EditorClassIdentifier: 
   description: Bees that grows muscular arms gains increase protection against predators.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: d936d54852dd16a42a32b97b89599d07, type: 3}
   temperatureRes: 0
   predatorPrevention: 1
   beeSpeedMod: 0

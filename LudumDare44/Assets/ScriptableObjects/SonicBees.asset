@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Infuse your bees with speed, you can get to further flower patches
     at ease.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a524d60b1d0761649a72c9c51124d0db, type: 3}
   temperatureRes: 0
   predatorPrevention: 0
   beeSpeedMod: 1

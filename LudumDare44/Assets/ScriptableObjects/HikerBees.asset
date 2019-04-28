@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Through rigorous training, the bees have the endurance to weather any
     obstacle.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: d7813448ea04dbe448b16f1897bf1ff5, type: 3}
   temperatureRes: 0
   predatorPrevention: 0
   beeSpeedMod: 0

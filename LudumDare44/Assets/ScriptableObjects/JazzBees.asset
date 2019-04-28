@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Through the power of music, these bees are known for their reproductive
     prowess.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 9a2aeff7889f8914bb44fd77f0ad5c06, type: 3}
   temperatureRes: 0
   predatorPrevention: 0
   beeSpeedMod: 0
