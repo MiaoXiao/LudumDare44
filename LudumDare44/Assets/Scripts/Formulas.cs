@@ -16,7 +16,15 @@ public class Formulas : Singleton<Formulas>
         return  5 * timeDif * 2; //TODO: take the offset value of drain honey and change this to the offset variable
     }
 
-    private float energyGather(int honeyTotal, Region rNum, beeColony colonyNum){
+    /// <summary>
+    /// Get's total energy used for gathering while at a region.
+    /// Travel Costs included
+    /// </summary>
+    /// <param name="honeyTotal"></param>
+    /// <param name="rNum"></param>
+    /// <param name="colonyNum"></param>
+    /// <returns></returns>
+    public float energyGather(int honeyTotal, Region rNum, beeColony colonyNum){
         float energyOffset = 0f;
         energyOffset = energyCost(rNum, colonyNum);
         if ((honeyTotal / 4) - energyOffset <= 0)
