@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4084e73a54a334ebf4054e96571010, type: 3}
+  m_Name: BrittleBees
+  m_EditorClassIdentifier: 
+  description: Brittle bees have hone their craft in flight and honey gathering, but
+    in doing so they left their bodies vulnerable to the predators around.
+  icon: {fileID: 0}
+  temperatureRes: 0
+  predatorPrevention: -2
+  beeSpeedMod: 1
+  honeyConsumption: 0
+  passiveDNA: 0
+  maxEnergy: 1
+  beeRefund: 0
