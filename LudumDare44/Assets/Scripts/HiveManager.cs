@@ -299,14 +299,16 @@ public class HiveManager : Singleton<HiveManager>
 
     private IEnumerator GenerateRegion()
     {
-        while (_allRegions.Count != _regionCap)
+        while (true)
         {
             yield return new WaitForSeconds(_generateInterval);
-            int randomIndex = Random.Range(0, _avaliableRegions.Count);
-            int temperature = Random.Range(-10, 11);
-            int predator = Random.Range(0, 4);
-
-            CreateRegion(_avaliableRegions[randomIndex], temperature, predator);
+            if (_allRegions.Count != _regionCap)
+            {
+                int randomIndex = Random.Range(0, _avaliableRegions.Count);
+                int temperature = Random.Range(-10, 11);
+                int predator = Random.Range(0, 4);
+                CreateRegion(_avaliableRegions[randomIndex], temperature, predator);
+            }
         }
     }
 

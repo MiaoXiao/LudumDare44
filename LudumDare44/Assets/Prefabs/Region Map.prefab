@@ -3010,7 +3010,7 @@ MonoBehaviour:
   _currentHoney: 411
   _maxHoney: 1000
   _dangerHoneyThreshold: 0.25
-  _honeyLossIntervalDuration: 1
+  _honeyLossIntervalDuration: 2
   _currentDNA: 100
   _dnaGenerationPerSecond: 1
   _startingRegions: 3

@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1317682000444567286}
   - component: {fileID: 1317682000444567287}
-  - component: {fileID: 1317682000444567285}
+  - component: {fileID: 5775539456525557641}
+  - component: {fileID: 90558106529258483}
   m_Layer: 0
   m_Name: BeeGroup
   m_TagString: Untagged
@@ -44,7 +45,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4e4d24c20970c42b5c14b24df9b4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!212 &1317682000444567285
+--- !u!95 &5775539456525557641
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317682000444567280}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c3894b7fdad429d47a131e8a4b59d6fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &90558106529258483
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,13 +100,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 60
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 5b804a180a5b05c4eb7acd91837a9e69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 7.2, y: 7.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
