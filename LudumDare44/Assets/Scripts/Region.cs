@@ -42,6 +42,9 @@ public class Region : MonoBehaviour
     public delegate void RegionSelectedEvent(Region r);
     public RegionSelectedEvent OnRegionSelected;
 
+    public delegate void OutOfHoneyEvent(Region r);
+    public OutOfHoneyEvent OnOutOfHoney;
+
     /// <summary>
     /// Sets region data
     /// </summary>
@@ -53,15 +56,15 @@ public class Region : MonoBehaviour
         this._predatorLevel = Mathf.Clamp(predatorLevel, 0, 1);
         transform.position = regionPosition;
         _distanceToHive = (transform.position - HiveManager.Instance.transform.position).magnitude;
-        ///TODO:
-        ///maxHoney = currentHoney = Some formula to dictate this value;
+
+        _maxHoney = _currentHoney = 50;
     }
 
     /// <summary>
     /// Fires when clicked on
     /// </summary>
     public void OnMouseDown() {
-        if (OnRegionSelected != null) OnRegionSelected(this);
+        if (OnRegionSelected != null && _currentHoney > 0) OnRegionSelected(this);
     }
 
     /// <summary>
@@ -76,7 +79,14 @@ public class Region : MonoBehaviour
             return drainValue;
         }
         else {
-            return Mathf.Clamp(_currentHoney, 0, _maxHoney);
+            StartCoroutine(DelayedRemove());
+            return Mathf.Clamp(_currentHoney, 0, drainValue);
         }
+    }
+
+    IEnumerator DelayedRemove() {
+        yield return new WaitForSeconds(1.1f);
+        if(OnOutOfHoney!=null) OnOutOfHoney(this);
+        Destroy(gameObject);
     }
 }

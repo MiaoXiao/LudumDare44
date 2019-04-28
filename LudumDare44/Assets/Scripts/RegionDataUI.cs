@@ -53,8 +53,12 @@ public class RegionDataUI : MonoBehaviour {
         
     }
 
-    public void UpdateHoneyCount(Region r) {
-        _regionRemainingHoney.text = r.RemainingHoneyCapacity.ToString();
+    void Update() {
+        if(_currentRegion) UpdateHoneyCount();
+    }
+
+    public void UpdateHoneyCount() {
+        _regionRemainingHoney.text = _currentRegion.RemainingHoneyCapacity.ToString();
     }
 
     private void UpdateTemperature(Region r) {

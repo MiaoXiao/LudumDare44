@@ -320,9 +320,13 @@ public class HiveManager : Singleton<HiveManager>
         regionInstance.SetRegionData(spawnPos, temp, predator);
         regionInstance.OnRegionSelected += UpdateEncounter;
         regionInstance.OnRegionSelected += UpdateUI;
+        regionInstance.OnOutOfHoney += CleanList;
         _allRegions.Add(regionInstance);
     }
 
+    private void CleanList(Region r) {
+        _allRegions.Remove(r);
+    }
     public void UpdateEncounter(Region r) {
         _encountersHandler.PopulateInfo(_activeColony, r);
     }
