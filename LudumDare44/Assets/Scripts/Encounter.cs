@@ -23,7 +23,7 @@ public class Encounter : MonoBehaviour
     private Button _embarkButton;
 
     public void Update() {
-        _embarkButton.interactable = !_currentColony.IsBusy;
+        _embarkButton.interactable = !_currentColony.IsBusy && _currentRegion && !_currentRegion.IsOccupied;
     }
 
     public void PopulateInfo(beeColony c, Region r) {
@@ -40,6 +40,7 @@ public class Encounter : MonoBehaviour
     public void StartEncounter() {
         if ((!_currentRegion && !_currentColony) || _currentColony.IsBusy) return;
         _currentColony.IsBusy = true;
+        _currentRegion.IsOccupied = true;
         Debug.Log("Sending out a bee from Colony: " + _currentColony + " to Region: " + _currentRegion.transform.position);
         BeeGroup group = Instantiate(_beeObjTemplate, transform.position, Quaternion.identity);
         group.InitializeGroup(_currentColony, _currentRegion, _energyDrainRate, ENCOUNTER_TICK_RATE);

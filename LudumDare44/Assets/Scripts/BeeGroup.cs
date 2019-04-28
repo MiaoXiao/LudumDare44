@@ -50,11 +50,13 @@ public class BeeGroup : MonoBehaviour {
 
             if (_potentialHoney >= determinedGatherAmt ||
                 _currentRegion.RemainingHoneyCapacity <= 0 ||
+                !_currentRegion ||
                 _curColonyEnergy <= 0f) {
                 isDoneGathering = true;
             }
 
             yield return new WaitForSeconds(ENCOUNTER_TICK_RATE);//tick rate
+
             yield return 0f;
         }
         //go back to the colony
