@@ -48,8 +48,8 @@ public class RegionDataUI : MonoBehaviour {
         UpdatePredator(_currentRegion);
 
         _regionRemainingHoney.text = _currentRegion.RemainingHoneyCapacity.ToString();
-        _distanceToHive.text = _currentRegion.HiveDistance.ToString("F1") + " mi."; 
-        _regionRisk.text = Formulas.Instance.showPotential(_currentRegion, c).ToString() + "%";
+        _distanceToHive.text = _currentRegion.HiveDistance.ToString("F1") + " mi.";
+        _regionRisk.text = Mathf.Clamp(Formulas.Instance.showPotential(_currentRegion, c) * _currentRegion.MaxHoneyCapacity, 0, c.HoneyCapacity).ToString();
         
     }
 
@@ -71,7 +71,7 @@ public class RegionDataUI : MonoBehaviour {
         }
         _temperatureIcon.sprite = _tempImages[iconIndex];
 
-        _thermometerNotch.transform.localPosition = new Vector3(r.Temperature * _thermNotchRatio, 0);
+        _thermometerNotch.transform.localPosition = new Vector3(r.Temperature * _thermNotchRatio, _thermometerNotch.transform.localPosition.y);
     }
 
     private void UpdatePredator(Region r) {

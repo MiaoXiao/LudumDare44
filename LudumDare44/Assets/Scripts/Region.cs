@@ -78,14 +78,16 @@ public class Region : MonoBehaviour
     /// <param name="drainValue"></param>
     /// <returns></returns>
     public int DrainHoney(int drainValue) {
-        _currentHoney -= drainValue;
-        Mathf.Clamp(_currentHoney, 0, _maxHoney);
-        if (_currentHoney > drainValue) {
+        if (_currentHoney >= drainValue) {
+            _currentHoney -= drainValue;
+            _currentHoney = Mathf.Clamp(_currentHoney, 0, _maxHoney);
             return drainValue;
         }
         else {
+            int honeyReturn = _currentHoney;
+            _currentHoney = 0;
             StartCoroutine(DelayedRemove());
-            return Mathf.Clamp(_currentHoney, 0, drainValue);
+            return honeyReturn;
         }
     }
 

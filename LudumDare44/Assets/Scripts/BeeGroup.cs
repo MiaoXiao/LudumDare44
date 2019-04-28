@@ -15,7 +15,7 @@ public class BeeGroup : MonoBehaviour {
     private int _curColBeeCount;
     private int _potentialHoney;
 
-    private const int HONEY_PER_TICK = 5;
+    private const int HONEY_PER_TICK = 4;
 
     public delegate void EncounterFinishedEvent(int honeyGains);
     public EncounterFinishedEvent OnFinishedEncounter;
@@ -41,11 +41,13 @@ public class BeeGroup : MonoBehaviour {
         //go to region
         yield return StartCoroutine(MoveGameObjectTo(_currentRegion.transform.position, _currentColony.Speed, _timeToTravel));
 
-        int determinedGatherAmt = Formulas.Instance.totalHoneyGathered(_currentRegion, _currentColony);
+        int determinedGatherAmt = _currentColony.HoneyCapacity;
         //at the cool food place, checking conditions per tick for completion
         bool isDoneGathering = false;
+        //adjust drain value by taking floor int 
+        int adjustedDrainValue = _currentColony.numBees * Mathf.RoundToInt(HONEY_PER_TICK * (Formulas.Instance.showPotential(_currentRegion, _currentColony) / 100f));
         while (!isDoneGathering) {
-            _potentialHoney += _currentRegion.DrainHoney(HONEY_PER_TICK);
+            _potentialHoney += _currentRegion.DrainHoney(adjustedDrainValue);
             _curColonyEnergy -= _energyDrainRate;
 
             if (_potentialHoney >= determinedGatherAmt ||

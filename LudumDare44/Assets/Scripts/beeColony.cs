@@ -18,7 +18,7 @@ public class beeColony : MonoBehaviour {
     private Trait[] beeTraits = new Trait[3];
     private float _speed = 1.0f; //****1.0/1 distance / time
     private float _energy = 0f;
-    private float _honeyCapacity = 10f;
+    private int _honeyCapacity = 50;
     private int _antiPredator = 0;
 
     private int _tempRes = 0; //spectrum from 10 to -10, where 10 is a cold bee group and -10 is a hot bee group
@@ -43,7 +43,7 @@ public class beeColony : MonoBehaviour {
         get { return _upgradeEnergy; }
     }
 
-    public float HoneyCapacity {
+    public int HoneyCapacity {
         get { return _honeyCapacity; }
     }
 
