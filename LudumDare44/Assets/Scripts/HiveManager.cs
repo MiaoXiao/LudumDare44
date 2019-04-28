@@ -51,21 +51,9 @@ public class HiveManager : Singleton<HiveManager>
             if (value < 0) _currentHoney = 0;
             else _currentHoney = value;
             _honeyCount.value = _currentHoney;
-            float currentPerc = CurrentHoney / MaxHoney;
-            if (currentPerc <= _dangerHoneyThreshold && !_honeyIsLow)
-            {
-                _honeyCount.GetComponent<PulseObject>().Pulse();
-                _honeyIsLow = true;
-            }
-            else if (currentPerc > _dangerHoneyThreshold && _honeyIsLow)
-            {
-                _honeyCount.GetComponent<PulseObject>().StopPulse();
-                _honeyIsLow = false;
-            }
+            _honeyAmountText.text = _currentHoney.ToString();
         }
     }
-
-    private bool _honeyIsLow = false;
 
     [SerializeField]
     private int _maxHoney = 1000;
@@ -177,6 +165,9 @@ public class HiveManager : Singleton<HiveManager>
 
     [SerializeField]
     private Slider _honeyCount;
+
+    [SerializeField]
+    private Text _honeyAmountText;
 
     [SerializeField]
     private Text _dnaCount;
