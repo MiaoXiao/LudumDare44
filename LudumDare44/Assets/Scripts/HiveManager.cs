@@ -12,11 +12,14 @@ public class HiveManager : Singleton<HiveManager>
     [SerializeField]
     private Encounter _encountersHandler;
     [SerializeField]
+    private RegionDataUI _regionUIHandler;
+    [SerializeField]
     private beeColony[] _colonies;
     private beeColony _activeColony;
     public beeColony ActiveColony {
         get { return _activeColony; }
     }
+
     [Header("Time")]
 
     [Tooltip("The time left in the game. When it reaches 0, player wins")]
@@ -289,6 +292,7 @@ public class HiveManager : Singleton<HiveManager>
             Region regionInstance = Instantiate(_regionTemplate);
             regionInstance.SetRegionData(spawnPos, temperature, predator);
             regionInstance.OnRegionSelected += UpdateEncounter;
+            regionInstance.OnRegionSelected += UpdateUI;
             _allRegions.Add(regionInstance);
         }
     }
@@ -306,5 +310,9 @@ public class HiveManager : Singleton<HiveManager>
         //UI stuff to swap colony UI
         UpdateEncounter(_activeColony);
 
+    }
+
+    public void UpdateUI(Region r) {
+        _regionUIHandler.UpdateRegionUI(r, _activeColony);
     }
 }
