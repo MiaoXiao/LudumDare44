@@ -127,6 +127,10 @@ public class HiveManager : Singleton<HiveManager>
 
     [Tooltip("How often in seconds a new region is generated and placed")]
     [SerializeField]
+    private int _startingRegions = 3;
+
+    [Tooltip("How often in seconds a new region is generated and placed")]
+    [SerializeField]
     private float _generateInterval = 30f;
 
     [Tooltip("The maximum amount of regions allowed")]
@@ -196,11 +200,13 @@ public class HiveManager : Singleton<HiveManager>
 
     private void SetAvaliableRegionIndices()
     {
-        for (int i = 0; i < _gridDimensions.x; ++i)
+        for (int i = 1; i < _gridDimensions.x - 1; ++i)
         {
-            for (int j = 0; j < _gridDimensions.y; ++j)
+            for (int j = 1; j < _gridDimensions.y - 1; ++j)
             {
-                _avaliableRegions.Add(new Vector2(i, j));
+                //Dont add in center
+                if (i != _gridDimensions.x / 2 || j != _gridDimensions.y / 2)
+                    _avaliableRegions.Add(new Vector2(i, j));
             }
         }
     }
@@ -219,6 +225,17 @@ public class HiveManager : Singleton<HiveManager>
         StartCoroutine(DNAGain());
         StartCoroutine(GenerateRegion());
 
+        //Starting regions
+        for (int i = 0; i < _startingRegions; ++i)
+        {
+            int temperature = Random.Range(-1, 2);
+            int predator = Random.Range(0, 2);
+            int radiusAroundCenter = 3;
+            float randX = (_gridDimensions.x / 2) + Random.Range(-radiusAroundCenter, radiusAroundCenter - 1);
+            float randY = (_gridDimensions.y / 2) + Random.Range(-radiusAroundCenter, radiusAroundCenter - 1);
+            Vector2 coords = new Vector2(randX, randY);
+            CreateRegion(coords, temperature, predator);
+        }
     }
 
     public void QuitGame()
@@ -283,18 +300,23 @@ public class HiveManager : Singleton<HiveManager>
             int temperature = Random.Range(-10, 11);
             int predator = Random.Range(0, 4);
 
-            Vector2 gridOrigin = _gridBoundary.transform.position;
-            float width = _gridBoundary.bounds.size.x;
-            float height = _gridBoundary.bounds.size.y;
-            Vector2 bottomLeftCorner = new Vector3(gridOrigin.x - width / 2f + _cellSize.x / 2f,
-                gridOrigin.y - height / 2f + _cellSize.y / 2f);
-            Vector2 spawnPos = (_avaliableRegions[randomIndex] * _cellSize + bottomLeftCorner);
-            Region regionInstance = Instantiate(_regionTemplate);
-            regionInstance.SetRegionData(spawnPos, temperature, predator);
-            regionInstance.OnRegionSelected += UpdateEncounter;
-            regionInstance.OnRegionSelected += UpdateUI;
-            _allRegions.Add(regionInstance);
+            CreateRegion(_avaliableRegions[randomIndex], temperature, predator);
         }
+    }
+
+    private void CreateRegion(Vector2 regionIndice, int temp, int predator)
+    {
+        Vector2 gridOrigin = _gridBoundary.transform.position;
+        float width = _gridBoundary.bounds.size.x;
+        float height = _gridBoundary.bounds.size.y;
+        Vector2 bottomLeftCorner = new Vector3(gridOrigin.x - width / 2f + _cellSize.x / 2f,
+            gridOrigin.y - height / 2f + _cellSize.y / 2f);
+        Vector2 spawnPos = (regionIndice * _cellSize + bottomLeftCorner);
+        Region regionInstance = Instantiate(_regionTemplate);
+        regionInstance.SetRegionData(spawnPos, temp, predator);
+        regionInstance.OnRegionSelected += UpdateEncounter;
+        regionInstance.OnRegionSelected += UpdateUI;
+        _allRegions.Add(regionInstance);
     }
 
     public void UpdateEncounter(Region r) {
