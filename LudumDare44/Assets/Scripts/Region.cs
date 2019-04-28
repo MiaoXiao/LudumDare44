@@ -17,7 +17,12 @@ public class Region : MonoBehaviour
     private int _temperature = 0;
     private int _predatorLevel = 0;
 
+    private bool _isOccupied = false;
     #region properties
+    public bool IsOccupied {
+        get { return _isOccupied; }
+        set { _isOccupied = value; }
+    }
     public int MaxHoneyCapacity {
         get { return _maxHoney; }
     }
