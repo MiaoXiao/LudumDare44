@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: The bees which everyone always looks down upon from a toddler until
     adult, but they aim to prove other bees wrong.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e026e627137cd0c42b649f274b4e4537, type: 3}
   temperatureRes: 0
   predatorPrevention: -1
   beeSpeedMod: -1

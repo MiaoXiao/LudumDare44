@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Using their magical repertoire, magic bees dive into the natural wonders
     of the world.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ff40272ef87699d439ce99673913c341, type: 3}
   temperatureRes: 0
   predatorPrevention: 0
   beeSpeedMod: 1
