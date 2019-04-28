@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d4084e73a54a334ebf4054e96571010, type: 3}
-  m_Name: BuffBees
+  m_Name: SunglassesBees
   m_EditorClassIdentifier: 
-  description: Bees that grows muscular arms gains increase protection against predators.
+  description: Sunglasses shades the bees' sensitive eyes against the raging sun.
   icon: {fileID: 0}
-  temperatureRes: 0
-  predatorPrevention: 1
+  temperatureRes: -3
+  predatorPrevention: 0
   beeSpeedMod: 0
-  honeyConsumption: 1
+  honeyConsumption: 0
   passiveDNA: 0
   maxEnergy: 0
   beeRefund: 0
