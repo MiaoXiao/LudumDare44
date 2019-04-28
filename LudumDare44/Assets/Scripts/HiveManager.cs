@@ -234,6 +234,8 @@ public class HiveManager : Singleton<HiveManager>
             Vector2 coords = new Vector2(randX, randY);
             CreateRegion(coords, temperature, predator);
         }
+        UpdateEncounter(_allRegions[0]);
+        UpdateUI(_allRegions[0]);
     }
 
     private void Update()
