@@ -64,7 +64,7 @@ public class beeColony : MonoBehaviour {
     }
     
     void Update(){
-        _energy = ( HiveManager.Instance.CurrentHoney / 4 ) + upgradeEnergy;
+        _energy = ( HiveManager.Instance.CurrentHoney / 4 ) + _upgradeEnergy;
         /*
         if (Input.GetKey("w")){
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + (speed * Time.deltaTime), 0);
