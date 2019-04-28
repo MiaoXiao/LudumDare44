@@ -253,7 +253,7 @@ public class HiveManager : Singleton<HiveManager>
 
     public void RestartScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("hivemanager");
     }
 
     private IEnumerator HoneyLoss()
