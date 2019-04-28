@@ -222,6 +222,7 @@ public class HiveManager : Singleton<HiveManager>
         CurrentHoney = CurrentHoney;
         //initial colony is the first one
         _activeColony = _colonies[0];
+        SelectNewColony(0);
 
         StartCoroutine(TimeLoss());
         StartCoroutine(HoneyLoss());
