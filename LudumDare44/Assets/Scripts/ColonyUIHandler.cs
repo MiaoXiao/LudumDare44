@@ -26,7 +26,7 @@ public class ColonyUIHandler : MonoBehaviour
     private Sprite _beePopulationIcon;
 
     [SerializeField]
-    private Sprite _temperatureIcon;
+    private Image _temperatureIcon;
 
     [SerializeField]
     private float _currentSpeed;
