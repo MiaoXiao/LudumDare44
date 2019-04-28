@@ -20,12 +20,20 @@ public class ColonyUIHandler : MonoBehaviour
     /// updated text variables
     /// </summary>
     [SerializeField]
-    private Text _numBees;
+    private int _numBees;
+
+    [SerializeField]
+    private Sprite _beePopulationIcon;
 
     [SerializeField]
     private Sprite _temperatureIcon;
 
     [SerializeField]
-    private int _currentSpeed;
+    private float _currentSpeed;
+
+    public void _updateColonyUI(beeColony currentColony){
+        _numBees = currentColony.numBees;
+        _currentSpeed = currentColony.Speed;
+    }
 
 }
