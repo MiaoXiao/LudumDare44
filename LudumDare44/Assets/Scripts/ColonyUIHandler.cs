@@ -31,7 +31,26 @@ public class ColonyUIHandler : MonoBehaviour
     [SerializeField]
     private float _currentSpeed;
 
-    public void _updateColonyUI(beeColony currentColony){
+    [SerializeField]
+    private Sprite _increasePopulation;
+
+    [SerializeField]
+    private Button _popButton;
+
+    [SerializeField]
+    private Transform _buttonLocation;
+
+    private void Awake(){
+        generateButtonLoc();
+    }
+
+    private void generateButtonLoc(){
+        Button populationUpgrade = Instantiate(_popButton, _buttonLocation, false);
+        populationUpgrade.GetComponent<Image>().sprite = _increasePopulation;
+    }
+
+    public void _updateColonyUI(beeColony currentColony)
+    {
         _numBees = currentColony.numBees;
         _currentSpeed = currentColony.Speed;
     }
