@@ -22,9 +22,9 @@ public class RegionDataUI : MonoBehaviour {
     /// <param name="r"></param>
     /// <param name="c"></param>
     public void UpdateRegionUI(Region r, beeColony c) {
-        _regionTemperature.text = r.Temperature.ToString();
-        _regionPredator.text = r.PredatorLevel.ToString();
-        _regionRemainingHoney.text = r.RemainingHoneyCapacity.ToString();
+        //_regionTemperature.text = r.Temperature.ToString();
+        //_regionPredator.text = r.PredatorLevel.ToString();
+        //_regionRemainingHoney.text = r.RemainingHoneyCapacity.ToString();
         
     }
 
