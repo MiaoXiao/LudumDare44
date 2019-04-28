@@ -245,6 +245,14 @@ public class HiveManager : Singleton<HiveManager>
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitGame();
+        }
+    }
+
     public void QuitGame()
     {
         Application.Quit();
