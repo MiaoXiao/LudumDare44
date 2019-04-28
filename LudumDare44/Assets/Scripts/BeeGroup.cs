@@ -60,6 +60,7 @@ public class BeeGroup : MonoBehaviour {
             yield return 0f;
         }
         //go back to the colony
+        _currentRegion.IsOccupied = false;
         yield return StartCoroutine(MoveGameObjectTo(HiveManager.Instance.transform.position, _currentColony.Speed, _timeToTravel));
         if (OnFinishedEncounter != null) OnFinishedEncounter(_potentialHoney);
         HiveManager.Instance.CurrentHoney += _potentialHoney;
