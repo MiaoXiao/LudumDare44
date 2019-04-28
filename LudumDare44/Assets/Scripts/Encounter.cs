@@ -14,9 +14,7 @@ public class Encounter : MonoBehaviour
     private const float ENCOUNTER_TICK_RATE = 1.0f;
 
     [SerializeField]
-    private float _energyDrainMovement = 0.1f;
-    [SerializeField]
-    private float _energyDrainRate = 0.1f;
+    private readonly float _energyDrainRate = 0.1f;
 
     [SerializeField]
     private BeeGroup _beeObjTemplate;
@@ -46,10 +44,11 @@ public class Encounter : MonoBehaviour
     }
 
     public void StartEncounter() {
-        if (!_currentRegion && !_currentColony) return;
+        if (!_currentRegion && !_currentColony && _currentColony.IsBusy) return;
+        _currentColony.IsBusy = true;
         Debug.Log("Sending out a bee from Colony: " + _currentColony + " to Region: " + _currentRegion.transform.position);
         BeeGroup group = Instantiate(_beeObjTemplate, transform.position, Quaternion.identity);
-        group.InitializeGroup(_currentColony, _currentRegion, _energyDrainRate, _energyDrainMovement, ENCOUNTER_TICK_RATE);
+        group.InitializeGroup(_currentColony, _currentRegion, _energyDrainRate, ENCOUNTER_TICK_RATE);
         group.StartGroup(); 
     }
 
