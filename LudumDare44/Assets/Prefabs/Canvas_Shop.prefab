@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1055583079}
   - component: {fileID: 1055583082}
   - component: {fileID: 1055583081}
+  - component: {fileID: 5037202001997252696}
   m_Layer: 5
   m_Name: SelectTrait
   m_TagString: Untagged
@@ -74,6 +75,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &5037202001997252696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055583078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb39d2870e3fcb44dafdb1d7f79a7a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.05
+  size: 0.05
+  pulseOnStart: 1
 --- !u!1 &2197502169577933967
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +283,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e0ee748231cccee4e898365426c95037, type: 2}
   - {fileID: 11400000, guid: cbab643b3c207e2468c2ed4c27cc0405, type: 2}
   - {fileID: 11400000, guid: 423096db225a7cb438f6565073644390, type: 2}
+  - {fileID: 11400000, guid: abd491fc4ead2d94fa2af2b83ac1ce52, type: 2}
+  - {fileID: 11400000, guid: 5abe8ea79cd2b74428258904aaf58d08, type: 2}
+  - {fileID: 11400000, guid: d968b08d5926e3c4884a61f665fab199, type: 2}
   _dnaCost: 250
   _buttonGridLayout: {fileID: 1499926160073354436}
   _traitButton: {fileID: 8757655940959594235, guid: efd873a44237a364e8afdab375897791,
@@ -676,8 +695,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 50, y: -17}
-  m_SizeDelta: {x: 75, y: 75}
+  m_AnchoredPosition: {x: 37.7, y: -17.7}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2197502170545962073
 CanvasRenderer:
