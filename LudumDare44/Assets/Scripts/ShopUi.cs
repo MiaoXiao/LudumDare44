@@ -68,7 +68,10 @@ public class ShopUi : MonoBehaviour
         for (int i = 0; i < _allTraits.Length; ++i)
         {
             Button newTraitButton = Instantiate(_traitButton, _buttonGridLayout, false);
-            newTraitButton.onClick.AddListener(delegate { SetViewedTrait(_allTraits[i]); });
+
+            Trait selected = _allTraits[i];
+            newTraitButton.GetComponent<Image>().sprite = selected.icon;
+            newTraitButton.onClick.AddListener(delegate { SetViewedTrait(selected); });
         }
 
         if (_allTraits != null &&_allTraits.Length > 0)

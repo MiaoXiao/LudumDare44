@@ -263,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _allTraits: []
   _dnaCost: 250
-  _buttonGridLayout: {fileID: 2197502170355694237}
+  _buttonGridLayout: {fileID: 1499926160073354436}
   _traitButton: {fileID: 8757655940959594235, guid: efd873a44237a364e8afdab375897791,
     type: 3}
   _selectedTraitName: {fileID: 2197502170479590667}
