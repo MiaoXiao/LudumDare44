@@ -100,7 +100,7 @@ public class HiveManager : Singleton<HiveManager>
 
     [Tooltip("Every second, how much passive dna is gained")]
     [SerializeField]
-    private int _dnaGenerationPerSecond = 1;
+    private int _dnaGenerationPerSecond = 6;
     public int DNAGenerationPerSecond
     {
         get { return _dnaGenerationPerSecond; }

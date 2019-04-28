@@ -49,7 +49,7 @@ public class RegionDataUI : MonoBehaviour {
 
         _regionRemainingHoney.text = _currentRegion.RemainingHoneyCapacity.ToString();
         _distanceToHive.text = _currentRegion.HiveDistance.ToString("F1") + " mi.";
-        _regionRisk.text = Mathf.Clamp(Formulas.Instance.showPotential(_currentRegion, c) * _currentRegion.MaxHoneyCapacity, 0, c.HoneyCapacity).ToString();
+        _regionRisk.text = Mathf.RoundToInt(Mathf.Clamp((Formulas.Instance.showPotential(_currentRegion, c) / 100) * c.HoneyCapacity, 0, c.HoneyCapacity)).ToString();
         
     }
 
