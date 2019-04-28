@@ -102,7 +102,7 @@ public class beeColony : MonoBehaviour {
         _tempRes += newT.temperatureRes;
         _antiPredator += newT.predatorPrevention;
         HiveManager.Instance.DNAGenerationPerSecond += newT.passiveDNA;
-        upgradeEnergy += newT.maxEnergy;
+        _upgradeEnergy += newT.maxEnergy;
         HiveManager.Instance.HoneyLossPerInterval += newT.honeyConsumption;
         _speed += newT.beeSpeedMod;
         honeyCost -= newT.beeRefund;
