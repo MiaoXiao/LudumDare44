@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 7dc11f455bac3b44f82262940f89e6ad
+  - enabled: 1
+    path: Assets/Scenes/hivemanager.unity
+    guid: 3aee49b0758d48f48b84d44bc9782e13
   m_configObjects: {}
