@@ -309,10 +309,11 @@ public class HiveManager : Singleton<HiveManager>
         _activeColony = _colonies[index];
         //UI stuff to swap colony UI
         UpdateEncounter(_activeColony);
+        _regionUIHandler.UpdateRegionUI(_activeColony);
 
     }
 
     public void UpdateUI(Region r) {
-        _regionUIHandler.UpdateRegionUI(r, _activeColony);
+        _regionUIHandler.UpdateRegionUI(_activeColony, r);
     }
 }

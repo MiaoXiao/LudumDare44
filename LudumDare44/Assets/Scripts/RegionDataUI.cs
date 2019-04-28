@@ -27,6 +27,7 @@ public class RegionDataUI : MonoBehaviour {
     private Text _regionRisk;
 
     private float _thermNotchRatio;
+    private Region _currentRegion;
 
     void Start() {
         //ratio is width of the thermometer image divided by absolute value max of the temp scale
@@ -38,13 +39,16 @@ public class RegionDataUI : MonoBehaviour {
     /// </summary>
     /// <param name="r"></param>
     /// <param name="c"></param>
-    public void UpdateRegionUI(Region r, beeColony c) {
-        UpdateTemperature(r);
-        UpdatePredator(r);
+    public void UpdateRegionUI(beeColony c, Region r = null) {
+        if (r) {
+            _currentRegion = r;
+        }
+        UpdateTemperature(_currentRegion);
+        UpdatePredator(_currentRegion);
 
-        _regionRemainingHoney.text = r.RemainingHoneyCapacity.ToString();
-        _distanceToHive.text = r.HiveDistance.ToString("F1") + " mi."; 
-        _regionRisk.text = Formulas.Instance.showPotential(r, c).ToString() + "%";
+        _regionRemainingHoney.text = _currentRegion.RemainingHoneyCapacity.ToString();
+        _distanceToHive.text = _currentRegion.HiveDistance.ToString("F1") + " mi."; 
+        _regionRisk.text = Formulas.Instance.showPotential(_currentRegion, c).ToString() + "%";
         
     }
 
