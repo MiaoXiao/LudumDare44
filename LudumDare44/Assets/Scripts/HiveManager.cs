@@ -185,6 +185,9 @@ public class HiveManager : Singleton<HiveManager>
     private GameObject _endGameUi;
 
     [SerializeField]
+    private Text _endGameText;
+
+    [SerializeField]
     private Region _regionTemplate;
 
     //@@@ Colonies List
@@ -285,14 +288,14 @@ public class HiveManager : Singleton<HiveManager>
     {
         StopAllCoroutines();
         _endGameUi.SetActive(true);
-        _endGameUi.GetComponentInChildren<Text>().text = _winMessage;
+        _endGameText.text = _loseMessage;
     }
 
     private void Win()
     {
         StopAllCoroutines();
         _endGameUi.SetActive(true);
-        _endGameUi.GetComponentInChildren<Text>().text = _loseMessage;
+        _endGameText.text = _winMessage;
     }
 
     private IEnumerator GenerateRegion()

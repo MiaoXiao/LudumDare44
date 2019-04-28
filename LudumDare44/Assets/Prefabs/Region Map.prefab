@@ -2941,6 +2941,7 @@ MonoBehaviour:
   _honeyCount: {fileID: 4548873783891881523}
   _dnaCount: {fileID: 4548873785495101842}
   _endGameUi: {fileID: 4548873785346119690}
+  _endGameText: {fileID: 4548873784010924775}
   _regionTemplate: {fileID: 1993888876326737831, guid: 49d256816d4fbaa4dbcf3d996e21f3fb,
     type: 3}
 --- !u!1 &4548873785294825617
