@@ -62,7 +62,7 @@ public class ShopUi : MonoBehaviour
 
     private void Awake()
     {
-        _purchaseText.text = "Purchase for " + _dnaCost + " DNA";
+        _purchaseText.text = "Purchase for " + _dnaCost;
         GenerateTraitIcons();
         HiveManager.Instance.OnDNAChange += UpdatePurchaseStatus;
     }
