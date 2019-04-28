@@ -106,6 +106,7 @@ public class HiveManager : Singleton<HiveManager>
         {
             _currentDNA = value;
             _dnaCount.text = _currentDNA.ToString();
+            OnDNAChange.Invoke(CurrentDNA);
         }
     }
 
@@ -189,6 +190,8 @@ public class HiveManager : Singleton<HiveManager>
     //@@@ Colonies List
 
     private List<Region> _allRegions = new List<Region>();
+
+    public Action<int> OnDNAChange;
 
     private void Awake()
     {

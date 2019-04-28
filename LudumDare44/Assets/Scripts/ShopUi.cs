@@ -29,6 +29,9 @@ public class ShopUi : MonoBehaviour
     private Text _selectedTraitDescription;
 
     [SerializeField]
+    private Button _purchaseButton;
+
+    [SerializeField]
     private Text _purchaseText;
 
     [Header("Toggle")]
@@ -61,6 +64,12 @@ public class ShopUi : MonoBehaviour
     {
         _purchaseText.text = "Purchase for " + _dnaCost + " DNA";
         GenerateTraitIcons();
+        HiveManager.Instance.OnDNAChange += UpdatePurchaseStatus;
+    }
+
+    private void UpdatePurchaseStatus(int currentDna)
+    {
+        _purchaseButton.interactable = currentDna >= _dnaCost;
     }
 
     private void GenerateTraitIcons()

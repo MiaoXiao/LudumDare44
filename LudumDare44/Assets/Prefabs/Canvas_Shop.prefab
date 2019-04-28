@@ -268,6 +268,7 @@ MonoBehaviour:
     type: 3}
   _selectedTraitName: {fileID: 2197502170479590667}
   _selectedTraitDescription: {fileID: 2197502171296905678}
+  _purchaseButton: {fileID: 2197502171134129468}
   _purchaseText: {fileID: 2197502170190333008}
   _toggleOnPos: {fileID: 2197502170205330398}
   _toggleOffPos: {fileID: 2197502169945458648}
