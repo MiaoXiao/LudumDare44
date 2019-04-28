@@ -13,7 +13,7 @@ public class beeColony : MonoBehaviour {
     //Private field
     private int upgradeCost = 5;
     private int honeyCost = 200;
-    private float upgradeEnergy = 0f;
+    private float _upgradeEnergy = 0f;
 
     private Trait[] beeTraits = new Trait[3];
     private float _speed = 1.0f; //****1.0/1 distance / time
@@ -37,6 +37,10 @@ public class beeColony : MonoBehaviour {
 
     public float Energy {
         get { return _energy; }
+    }
+
+    public float EnergyUpgrade{
+        get { return _upgradeEnergy; }
     }
 
     public float HoneyCapacity {

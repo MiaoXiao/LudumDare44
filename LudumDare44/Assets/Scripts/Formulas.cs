@@ -33,7 +33,7 @@ public class Formulas : Singleton<Formulas>
         }
         else
         {
-            return (honeyTotal / 4) - energyOffset;
+            return (honeyTotal / 4) - energyOffset + colonyNum.EnergyUpgrade;
         }
     }
 
