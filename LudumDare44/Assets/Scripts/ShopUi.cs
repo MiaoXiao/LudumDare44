@@ -100,6 +100,7 @@ public class ShopUi : MonoBehaviour
             HiveManager.Instance.ActiveColony.addTrait(_currentlySelectedTrait);
             HiveManager.Instance.CurrentDNA -= _dnaCost;
             HiveManager.Instance.ColonyUIHandler.UpdateColonyUI(HiveManager.Instance.ActiveColony);
+            HiveManager.Instance.ColonyUIHandler.UpdateTraits(HiveManager.Instance.ActiveColony);
         }
         else{
             return;

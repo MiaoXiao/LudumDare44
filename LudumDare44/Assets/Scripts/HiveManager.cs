@@ -363,6 +363,7 @@ public class HiveManager : Singleton<HiveManager>
         UpdateEncounter(_activeColony);
         _regionUIHandler.UpdateRegionUI(_activeColony);
         _colonyUIHandler.UpdateColonyUI(_activeColony);
+        _colonyUIHandler.UpdateTraits(_activeColony);
     }
 
     public void UpdateUI(Region r) {

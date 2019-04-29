@@ -37,8 +37,21 @@ public class ColonyUIHandler : MonoBehaviour
     [SerializeField]
     private Transform _buttonLocation;
 
+    [SerializeField]
+    private Sprite _baseBee;
+
+    [SerializeField]
+    private Image _trait1;
+    [SerializeField]
+    private Image _trait2;
+    [SerializeField]
+    private Image _trait3;
+
     private void Awake(){
         _popButton.onClick.AddListener( _buttonCall );
+        _trait1.sprite = _baseBee;
+        _trait2.sprite = _baseBee;
+        _trait3.sprite = _baseBee;
     }
 
     private void _buttonCall(){
@@ -69,6 +82,34 @@ public class ColonyUIHandler : MonoBehaviour
         _numBees.text = "x " + currentColony.numBees;
         _speedText.text = "Speed: " + currentColony.Speed + " mi/s";
         UpdateTemperature(currentColony);
+    }
+
+    public void UpdateTraits(beeColony currentColony){
+        if (currentColony.numUpgrades == 0){
+            _trait1.sprite = _baseBee;
+            _trait2.sprite = _baseBee;
+            _trait3.sprite = _baseBee;
+        }
+        else if (currentColony.numUpgrades == 1){
+            _trait1.sprite = currentColony.beeTraits[0].icon;
+            _trait2.sprite = _baseBee;
+            _trait3.sprite = _baseBee;
+        }
+        else if (currentColony.numUpgrades == 2)
+        {
+            _trait1.sprite = currentColony.beeTraits[0].icon;
+            _trait2.sprite = currentColony.beeTraits[1].icon;
+            _trait3.sprite = _baseBee;
+        }
+        else if (currentColony.numUpgrades == 3)
+        {
+            _trait1.sprite = currentColony.beeTraits[0].icon;
+            _trait2.sprite = currentColony.beeTraits[1].icon;
+            _trait3.sprite = currentColony.beeTraits[2].icon;
+        }
+        else{
+            return;
+        }
     }
 
 }

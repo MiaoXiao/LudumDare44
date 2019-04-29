@@ -15,7 +15,7 @@ public class beeColony : MonoBehaviour {
     private int honeyCost = 100;
     private float _upgradeEnergy = 0f;
 
-    private Trait[] beeTraits = new Trait[3];
+    public Trait[] beeTraits = new Trait[3];
     private float _speed = 1.0f; //****1.0/1 distance / time
     private float _energy = 0f;
     private int _honeyCapacity = 50;
