@@ -11,5 +11,5 @@ public class SelectRegionUi : MonoBehaviour
     public void Hide()
     {
         gameObject.SetActive(false);
-    }
+   } 
 }

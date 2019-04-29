@@ -41,6 +41,7 @@ public class Formulas : Singleton<Formulas>
 
     //TODO: Predator & Temperature formulas
     public void killBees(Region rNum, beeColony colonyNum){
+        if (colonyNum.numBees <= 1) { return; }
         int tempBees = 0;
         for (int i = 0; i < colonyNum.numBees - 1; ++i){
             if(Random.Range(0, 7 + colonyNum.AntiPredator) < rNum.PredatorLevel){ 

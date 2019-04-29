@@ -8,7 +8,7 @@ public class beeColony : MonoBehaviour {
     public int numUpgrades = 0;
 
     [SerializeField]
-    public int numBees = 5;
+    public int numBees = 1;
 
     //Private field
     private int upgradeCost = 5;
@@ -18,7 +18,7 @@ public class beeColony : MonoBehaviour {
     public Trait[] beeTraits = new Trait[3];
     private float _speed = 1.0f; //****1.0/1 distance / time
     private float _energy = 0f;
-    private int _honeyCapacity = 50;
+    private int _honeyCapacity = 10;
     private int _antiPredator = 0;
 
     private int _tempRes = 0; //spectrum from 10 to -10, where 10 is a cold bee group and -10 is a hot bee group
@@ -44,7 +44,7 @@ public class beeColony : MonoBehaviour {
     }
 
     public int HoneyCapacity {
-        get { return _honeyCapacity; }
+        get { return _honeyCapacity * numBees; }
     }
 
     public float TemperatureResistance {
