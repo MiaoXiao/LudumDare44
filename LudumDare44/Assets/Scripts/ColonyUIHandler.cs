@@ -13,23 +13,20 @@ public class ColonyUIHandler : MonoBehaviour
     [SerializeField]
     private Text _speedText;
 
-    [SerializeField]
-    private Text _speedUnit;
-
     /// <summary>
     /// updated text variables
     /// </summary>
     [SerializeField]
-    private int _numBees;
+    private Text _numBees;
+
+    [SerializeField]
+    private Sprite[] _tempImages;
 
     [SerializeField]
     private Sprite _beePopulationIcon;
 
     [SerializeField]
-    private Sprite _temperatureIcon;
-
-    [SerializeField]
-    private float _currentSpeed;
+    private Image _temperatureIcon;
 
     [SerializeField]
     private Sprite _increasePopulation;
@@ -41,18 +38,37 @@ public class ColonyUIHandler : MonoBehaviour
     private Transform _buttonLocation;
 
     private void Awake(){
-        generateButtonLoc();
+        _popButton.onClick.AddListener( _buttonCall );
     }
 
-    private void generateButtonLoc(){
-        Button populationUpgrade = Instantiate(_popButton, _buttonLocation, false);
-        populationUpgrade.GetComponent<Image>().sprite = _increasePopulation;
+    private void _buttonCall(){
+        _updateNumBees(HiveManager.Instance.ActiveColony);
+        UpdateColonyUI(HiveManager.Instance.ActiveColony);
     }
-
-    public void _updateColonyUI(beeColony currentColony)
+    
+    //taken from Region Data UI
+    private void UpdateTemperature(beeColony c)
     {
-        _numBees = currentColony.numBees;
-        _currentSpeed = currentColony.Speed;
+        int iconIndex = 0;
+        if (c.TemperatureResistance < 0)
+        {
+            iconIndex = 2;
+        }
+        else if (c.TemperatureResistance > 0)
+        {
+            iconIndex = 1;
+        }
+        _temperatureIcon.sprite = _tempImages[iconIndex];
+    }
+
+    private void _updateNumBees(beeColony currentColony){
+        currentColony.addBees(HiveManager.Instance.CurrentHoney);
+    }
+
+    public void UpdateColonyUI(beeColony currentColony){
+        _numBees.text = "x " + currentColony.numBees;
+        _speedText.text = "Speed: " + currentColony.Speed + " mi/s";
+        UpdateTemperature(currentColony);
     }
 
 }

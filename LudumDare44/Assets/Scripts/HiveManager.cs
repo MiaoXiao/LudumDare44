@@ -14,6 +14,11 @@ public class HiveManager : Singleton<HiveManager>
     [SerializeField]
     private RegionDataUI _regionUIHandler;
     [SerializeField]
+    private ColonyUIHandler _colonyUIHandler;
+    public ColonyUIHandler ColonyUIHandler{
+        get { return _colonyUIHandler; }
+    }
+    [SerializeField]
     private beeColony[] _colonies;
     private beeColony _activeColony;
     public beeColony ActiveColony {
@@ -357,7 +362,7 @@ public class HiveManager : Singleton<HiveManager>
         //UI stuff to swap colony UI
         UpdateEncounter(_activeColony);
         _regionUIHandler.UpdateRegionUI(_activeColony);
-
+        _colonyUIHandler.UpdateColonyUI(_activeColony);
     }
 
     public void UpdateUI(Region r) {

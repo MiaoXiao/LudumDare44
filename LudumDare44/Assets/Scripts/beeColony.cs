@@ -12,7 +12,7 @@ public class beeColony : MonoBehaviour {
 
     //Private field
     private int upgradeCost = 5;
-    private int honeyCost = 200;
+    private int honeyCost = 100;
     private float _upgradeEnergy = 0f;
 
     private Trait[] beeTraits = new Trait[3];
@@ -89,10 +89,8 @@ public class beeColony : MonoBehaviour {
 
     public void addBees(int honeyAmount){
         numBees += 1;
-        Debug.Log(numBees);
         honeyCost += upgradeCost * numUpgrades;
-        Debug.Log(honeyCost);
-        //TODO: add subtration functionality here, update grabbed singleton grabbed [honeyAmt - honeyCost]
+        HiveManager.Instance.CurrentHoney -= honeyCost;
     }
 
     public void addTrait(Trait newT){
