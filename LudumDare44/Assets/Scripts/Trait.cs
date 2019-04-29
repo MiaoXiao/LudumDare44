@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TraitData", menuName = "TraitValues", order = 1)]
 public class Trait : ScriptableObject
 {
+    [TextArea]
     public string description = "Give a description here.";
     public Sprite icon = null; 
 

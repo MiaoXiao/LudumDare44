@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4084e73a54a334ebf4054e96571010, type: 3}
   m_Name: SonicBees
   m_EditorClassIdentifier: 
-  description: Infuse your bees with speed, you can get to further flower patches
-    at ease.
+  description: '<color=green>+1 mi/s</color>
+
+    <color=red>-1 Honey/s</color>'
   icon: {fileID: 21300000, guid: a524d60b1d0761649a72c9c51124d0db, type: 3}
   temperatureRes: 0
   predatorPrevention: 0

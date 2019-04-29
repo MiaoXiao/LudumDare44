@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4084e73a54a334ebf4054e96571010, type: 3}
   m_Name: BrittleBees
   m_EditorClassIdentifier: 
-  description: Brittle bees have hone their craft in flight and honey gathering, but
-    in doing so they left their bodies vulnerable.
+  description: '<color=green>+1 mi/s, +20 Energy</color>
+
+    <color=red>-Antipredator x2</color>'
   icon: {fileID: 21300000, guid: c0e2243979727be4a93276d07dc1a7e5, type: 3}
   temperatureRes: 0
   predatorPrevention: -2
   beeSpeedMod: 1
   honeyConsumption: 0
   passiveDNA: 0
-  maxEnergy: 1
+  maxEnergy: 20
   beeRefund: 0

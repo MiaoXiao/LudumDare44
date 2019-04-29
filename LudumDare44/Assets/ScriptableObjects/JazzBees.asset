@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4084e73a54a334ebf4054e96571010, type: 3}
   m_Name: JazzBees
   m_EditorClassIdentifier: 
-  description: Through the power of music, these bees are known for their reproductive
-    prowess.
+  description: <color=green>+1 DNA/s</color>,<color=green>-20 Honey Cost/Bee</color>
   icon: {fileID: 21300000, guid: 9a2aeff7889f8914bb44fd77f0ad5c06, type: 3}
   temperatureRes: 0
   predatorPrevention: 0

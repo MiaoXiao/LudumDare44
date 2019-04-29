@@ -82,7 +82,7 @@ public class Region : MonoBehaviour
     /// </summary>
     public void OnMouseDown()
     {
-        if (OnRegionSelected != null && _currentHoney > 0) { OnRegionSelected(this); }
+        if (OnRegionSelected != null && _currentHoney > 0) { OnRegionSelected(this); Formulas.Instance.killBees(this, HiveManager.Instance.ActiveColony);  }
     }
 
     /// <summary>

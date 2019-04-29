@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4084e73a54a334ebf4054e96571010, type: 3}
   m_Name: EarmuffBees
   m_EditorClassIdentifier: 
-  description: Bees that obtains earmuffs gains increase protection against the cold.
+  description: '<color=green>+Cold</color>
+
+    <color=red>-Hot</color>'
   icon: {fileID: 21300000, guid: 9b6c4bd7eb897304b81d9845e3f584bf, type: 3}
   temperatureRes: 3
   predatorPrevention: 0

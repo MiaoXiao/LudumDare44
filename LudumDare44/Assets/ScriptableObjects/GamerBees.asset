@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4084e73a54a334ebf4054e96571010, type: 3}
   m_Name: GamerBees
   m_EditorClassIdentifier: 
-  description: The bees which everyone always looks down upon from a toddler until
-    adult, but they aim to prove other bees wrong.
+  description: "<color=green>+3 DNA/s</color> \n<color=red>+20 Honey Cost/Bee</color>,<color=red>-1mi/s,
+    -3 Honey/s, -Antipredator, -20 Energy</color>"
   icon: {fileID: 21300000, guid: e026e627137cd0c42b649f274b4e4537, type: 3}
   temperatureRes: 0
   predatorPrevention: -1

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4084e73a54a334ebf4054e96571010, type: 3}
   m_Name: HikerBees
   m_EditorClassIdentifier: 
-  description: Through rigorous training, the bees have the endurance to weather any
-    obstacle.
+  description: '<color=green>+40 Energy</color>
+
+    <color=red>+20 Honey Cost/Bee</color>'
   icon: {fileID: 21300000, guid: d7813448ea04dbe448b16f1897bf1ff5, type: 3}
   temperatureRes: 0
   predatorPrevention: 0
