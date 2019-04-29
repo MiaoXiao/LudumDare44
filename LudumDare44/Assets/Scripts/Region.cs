@@ -65,11 +65,24 @@ public class Region : MonoBehaviour
         _maxHoney = _currentHoney = 100;
     }
 
+    private SelectRegionUi ui;
+    private void Awake()
+    {
+        ui = FindObjectOfType<SelectRegionUi>();
+        OnRegionSelected += delegate { ui.Set(transform.position); };
+    }
+
+    private void OnDestroy()
+    {
+        ui.Hide();
+    }
+
     /// <summary>
     /// Fires when clicked on
     /// </summary>
-    public void OnMouseDown() {
-        if (OnRegionSelected != null && _currentHoney > 0) OnRegionSelected(this);
+    public void OnMouseDown()
+    {
+        if (OnRegionSelected != null && _currentHoney > 0) { OnRegionSelected(this); }
     }
 
     /// <summary>
