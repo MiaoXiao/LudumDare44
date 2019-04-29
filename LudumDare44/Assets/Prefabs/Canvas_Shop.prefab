@@ -345,7 +345,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: abd491fc4ead2d94fa2af2b83ac1ce52, type: 2}
   - {fileID: 11400000, guid: 5abe8ea79cd2b74428258904aaf58d08, type: 2}
   - {fileID: 11400000, guid: d968b08d5926e3c4884a61f665fab199, type: 2}
-  _dnaCost: 250
+  _dnaCost: 100
   _buttonGridLayout: {fileID: 1499926160073354436}
   _traitButton: {fileID: 8757655940959594235, guid: efd873a44237a364e8afdab375897791,
     type: 3}
@@ -506,7 +506,7 @@ RectTransform:
   - {fileID: 1055583079}
   - {fileID: 1499926160073354436}
   m_Father: {fileID: 1737011273956316160}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -596,7 +596,7 @@ RectTransform:
   - {fileID: 2197502170479590666}
   - {fileID: 2197502171296905665}
   m_Father: {fileID: 1737011273956316160}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -890,8 +890,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2197502170190333011}
+  - {fileID: 2121856831787219925}
   m_Father: {fileID: 1737011273956316160}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1096,13 +1097,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1737011273956316160}
-  m_RootOrder: 0
+  m_Father: {fileID: 2197502171134129471}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 82.84499, y: 63.602528}
-  m_SizeDelta: {x: -266.33002, y: -446.02002}
+  m_AnchoredPosition: {x: 83.2, y: 2.0000114}
+  m_SizeDelta: {x: -265.63, y: -4.0000305}
   m_Pivot: {x: 0.5, y: 0.50000006}
 --- !u!222 &4377996143730483957
 CanvasRenderer:
@@ -1169,7 +1170,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2121856831787219925}
   - {fileID: 2197502170355694237}
   - {fileID: 2197502170407504406}
   - {fileID: 2197502171134129471}

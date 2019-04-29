@@ -3284,12 +3284,12 @@ MonoBehaviour:
   - {fileID: 866005507}
   - {fileID: 936749145}
   _secondsToSurvive: 300
-  _currentHoney: 411
+  _currentHoney: 500
   _maxHoney: 1000
   _dangerHoneyThreshold: 0.25
   _honeyLossIntervalDuration: 2
-  _currentDNA: 100
-  _dnaGenerationPerSecond: 1
+  _currentDNA: 0
+  _dnaGenerationPerSecond: 5
   _startingRegions: 3
   _generateInterval: 20
   _regionCap: 10
