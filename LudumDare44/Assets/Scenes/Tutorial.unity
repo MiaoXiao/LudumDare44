@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Text: 'Welcome to <color=yellow>Bevolve</color>!
 
     Grow, manage, and evolve a colony of bees. You win when your hive survives for
-    5 minutes.'
+    5 minutes. During a game, you can always restart by pressing ''Esc''.'
 --- !u!222 &99283624
 CanvasRenderer:
   m_ObjectHideFlags: 0

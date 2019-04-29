@@ -256,7 +256,7 @@ public class HiveManager : Singleton<HiveManager>
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            QuitGame();
+            RestartScene();
         }
     }
 
