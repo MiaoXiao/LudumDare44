@@ -23,6 +23,7 @@ public class BeeGroup : MonoBehaviour {
     public void InitializeGroup(beeColony c = null, Region r = null, float energyDrainRate = 0, float tickRate = 0) {
         _currentColony = c;
         _currentRegion = r;
+        FindObjectOfType<BeeEmbarkEvent>().UpdateEmbarkText(_currentColony, true);
         if (c && r) {
             _curColonyEnergy = Formulas.Instance.energyGather(HiveManager.Instance.CurrentHoney, _currentRegion, _currentColony);
             _curColBeeCount = c.numBees;
@@ -67,6 +68,7 @@ public class BeeGroup : MonoBehaviour {
         if (OnFinishedEncounter != null) OnFinishedEncounter(_potentialHoney);
         HiveManager.Instance.CurrentHoney += _potentialHoney;
         _currentColony.IsBusy = false;
+        FindObjectOfType<BeeEmbarkEvent>().UpdateEmbarkText(_currentColony, false);
         yield return 0f;
         Destroy(gameObject);
     }
