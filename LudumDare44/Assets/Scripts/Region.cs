@@ -62,7 +62,7 @@ public class Region : MonoBehaviour
         transform.position = regionPosition;
         _distanceToHive = (transform.position - HiveManager.Instance.transform.position).magnitude;
 
-        _maxHoney = _currentHoney = 50;
+        _maxHoney = _currentHoney = 100;
     }
 
     /// <summary>
