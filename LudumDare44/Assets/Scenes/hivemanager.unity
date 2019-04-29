@@ -559,23 +559,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d968b08d5926e3c4884a61f665fab199,
         type: 2}
-    - target: {fileID: 1055583081, guid: 82fd734f37dba5e449a3988e579ea959, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055583081, guid: 82fd734f37dba5e449a3988e579ea959, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055583081, guid: 82fd734f37dba5e449a3988e579ea959, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055583081, guid: 82fd734f37dba5e449a3988e579ea959, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d0f84cf08112ee14f9b593c9bcc5f5c4,
-        type: 3}
     - target: {fileID: 2197502170545962075, guid: 82fd734f37dba5e449a3988e579ea959,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -606,6 +589,23 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1055583081, guid: 82fd734f37dba5e449a3988e579ea959, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055583081, guid: 82fd734f37dba5e449a3988e579ea959, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055583081, guid: 82fd734f37dba5e449a3988e579ea959, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055583081, guid: 82fd734f37dba5e449a3988e579ea959, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d0f84cf08112ee14f9b593c9bcc5f5c4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82fd734f37dba5e449a3988e579ea959, type: 3}
 --- !u!1001 &2433992228791525410
