@@ -31,7 +31,7 @@ public class RegionDataUI : MonoBehaviour {
 
     void Start() {
         //ratio is width of the thermometer image divided by absolute value max of the temp scale
-        _thermNotchRatio = 150f / 9f;
+        _thermNotchRatio = 90f / 9f;
     }
 
     /// <summary>
