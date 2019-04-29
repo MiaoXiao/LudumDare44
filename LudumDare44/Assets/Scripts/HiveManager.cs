@@ -179,6 +179,15 @@ public class HiveManager : Singleton<HiveManager>
     private Text _endGameText;
 
     [SerializeField]
+    private Image _endGameImage;
+
+    [SerializeField]
+    private Sprite _winSprite;
+
+    [SerializeField]
+    private Sprite _loseSprite;
+
+    [SerializeField]
     private Region _regionTemplate;
 
     //@@@ Colonies List
@@ -290,6 +299,7 @@ public class HiveManager : Singleton<HiveManager>
         StopAllCoroutines();
         _endGameUi.SetActive(true);
         _endGameText.text = _loseMessage;
+        _endGameImage.sprite = _loseSprite;
     }
 
     private void Win()
@@ -297,6 +307,7 @@ public class HiveManager : Singleton<HiveManager>
         StopAllCoroutines();
         _endGameUi.SetActive(true);
         _endGameText.text = _winMessage;
+        _endGameImage.sprite = _winSprite;
     }
 
     private IEnumerator GenerateRegion()
