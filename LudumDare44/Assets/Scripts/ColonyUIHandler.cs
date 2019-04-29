@@ -86,23 +86,29 @@ public class ColonyUIHandler : MonoBehaviour
 
     public void UpdateTraits(beeColony currentColony){
         if (currentColony.numUpgrades == 0){
-            _trait1.sprite = _baseBee;
-            _trait2.sprite = _baseBee;
-            _trait3.sprite = _baseBee;
+            _trait1.enabled = false;
+            _trait2.enabled = false;
+            _trait3.enabled = false;
         }
         else if (currentColony.numUpgrades == 1){
+            _trait1.enabled = true;
             _trait1.sprite = currentColony.beeTraits[0].icon;
-            _trait2.sprite = _baseBee;
-            _trait3.sprite = _baseBee;
+            _trait2.enabled = false;
+            _trait3.enabled = false;
         }
         else if (currentColony.numUpgrades == 2)
         {
+            _trait1.enabled = true;
+            _trait2.enabled = true;
             _trait1.sprite = currentColony.beeTraits[0].icon;
             _trait2.sprite = currentColony.beeTraits[1].icon;
-            _trait3.sprite = _baseBee;
+            _trait3.enabled = false;
         }
         else if (currentColony.numUpgrades == 3)
         {
+            _trait1.enabled = true;
+            _trait2.enabled = true;
+            _trait3.enabled = true;
             _trait1.sprite = currentColony.beeTraits[0].icon;
             _trait2.sprite = currentColony.beeTraits[1].icon;
             _trait3.sprite = currentColony.beeTraits[2].icon;
