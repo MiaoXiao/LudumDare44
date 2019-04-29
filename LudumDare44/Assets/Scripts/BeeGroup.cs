@@ -46,8 +46,11 @@ public class BeeGroup : MonoBehaviour {
         //at the cool food place, checking conditions per tick for completion
         bool isDoneGathering = false;
         //adjust drain value by taking floor int 
-        int adjustedDrainValue = Mathf.FloorToInt(_currentColony.numBees * HONEY_PER_TICK * (Formulas.Instance.showPotential(_currentRegion, _currentColony) / 100f));
+        int adjustedDrainValue = HONEY_PER_TICK * _currentColony.numBees;
         while (!isDoneGathering) {
+            if (determinedGatherAmt - _potentialHoney < adjustedDrainValue) {
+                adjustedDrainValue = determinedGatherAmt - _potentialHoney;
+            }
             _potentialHoney += _currentRegion.DrainHoney(adjustedDrainValue);
             _curColonyEnergy -= _energyDrainRate;
 
