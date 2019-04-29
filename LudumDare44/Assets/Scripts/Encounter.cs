@@ -41,6 +41,7 @@ public class Encounter : MonoBehaviour
         if ((!_currentRegion && !_currentColony) || _currentColony.IsBusy) return;
         _currentColony.IsBusy = true;
         _currentRegion.IsOccupied = true;
+        Formulas.Instance.killBees(_currentRegion, _currentColony);
         Debug.Log("Sending out a bee from Colony: " + _currentColony + " to Region: " + _currentRegion.transform.position);
         BeeGroup group = Instantiate(_beeObjTemplate, transform.position, Quaternion.identity);
         group.InitializeGroup(_currentColony, _currentRegion, _energyDrainRate, ENCOUNTER_TICK_RATE);
