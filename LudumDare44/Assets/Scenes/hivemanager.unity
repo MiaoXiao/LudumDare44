@@ -486,6 +486,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4548873785198031393, guid: 80da80ca96181214893ebebe09ba7253,
+        type: 3}
+      propertyPath: _dnaGenerationPerSecond
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4548873785107087090, guid: 80da80ca96181214893ebebe09ba7253,
         type: 3}
       propertyPath: m_AnchorMax.x
