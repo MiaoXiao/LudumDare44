@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Formulas : Singleton<Formulas>
 {
+    private ColonyUIHandler ColonyUIUpdate = HiveManager.Instance.ColonyUIHandler;
+
     //Time helper formula
     private float timeTaken(Region rNum, beeColony colonyNum){
         return rNum.HiveDistance / colonyNum.Speed;
@@ -46,6 +48,7 @@ public class Formulas : Singleton<Formulas>
             }
         }
         colonyNum.numBees -= tempBees;
+        ColonyUIUpdate.UpdateColonyUI(HiveManager.Instance.ActiveColony);
     }
 
     public float tInfluence(Region rNum, beeColony colonyNum){
