@@ -35,12 +35,6 @@ public class ColonyUIHandler : MonoBehaviour
     private Button _popButton;
 
     [SerializeField]
-    private Transform _buttonLocation;
-
-    [SerializeField]
-    private Sprite _baseBee;
-
-    [SerializeField]
     private Image _trait1;
     [SerializeField]
     private Image _trait2;
@@ -49,10 +43,7 @@ public class ColonyUIHandler : MonoBehaviour
 
     private void Awake(){
         _popButton.onClick.AddListener( _buttonCall );
-        _trait1.sprite = _baseBee;
-        _trait2.sprite = _baseBee;
-        _trait3.sprite = _baseBee;
-    }
+    }   
 
     private void _buttonCall(){
         _updateNumBees(HiveManager.Instance.ActiveColony);
